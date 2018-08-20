@@ -1,16 +1,19 @@
 ---
 - name: upgrade all packages
   yum: name=* state=latest
+  become: true
 
 - name: install the latest version of Docker
   yum:
     name: docker
     state: latest
+  become: true
 
 - name: install the 'Development tools' package group
   yum:
     name: "@Development tools"
     state: present
+  become: true
 
 - name: install the docker-py module
   pip: 
@@ -23,8 +26,10 @@
     name: ec2-user
     groups: docker
     append: yes
+  become: true
 
 - name: Restart service docker, in all cases
   service:
     name: docker
     state: restarted
+  become: true
