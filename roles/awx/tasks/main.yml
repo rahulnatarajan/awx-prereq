@@ -17,7 +17,6 @@
     name: docker-py
     executable: /usr/local/lib/python2.7/site-packages/pip
     state: latest
-  become: True
 
 - name: adding ec2-user to group docker
   user:
