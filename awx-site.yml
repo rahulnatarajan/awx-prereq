@@ -1,0 +1,6 @@
+---
+- name: Configure awx instance
+  hosts: all
+
+  roles:
+    - awx
