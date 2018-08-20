@@ -19,6 +19,7 @@
   pip: 
     name: docker-py
     state: latest
+  become: true
 
 - name: adding ec2-user to group docker
   user:
